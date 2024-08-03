@@ -144,9 +144,9 @@ document.querySelector('#app').innerHTML = `
         <div class="row-two__right__inner">
           <div class="row-two__right__inner__block">
             <span class="row-two__right__inner__block__overlay">design</span>
-            <img src="/img/tools_logo/figma.svg" alt="Figma">
-            <img src="/img/tools_logo/ps.svg" alt="Photoshop">
-            <img src="/img/tools_logo/ai.svg" alt="Illustrator">
+            <img src="img/tools_logo/figma.svg" alt="Figma">
+            <img src="img/tools_logo/ps.svg" alt="Photoshop">
+            <img src="img/tools_logo/ai.svg" alt="Illustrator">
             <img src="/img/tools_logo/pr.svg" alt="Premiere">
             <img src="/img/tools_logo/notion.svg" alt="Notion">
             <img src="/img/tools_logo/meets.svg" alt="Meets">
