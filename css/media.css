@@ -3,9 +3,9 @@
     width: 308px;
   }
 
-  /*.row-one {
+  .row-one {
     flex-direction: column;
-  }*/
+  }
 
   .row-one__left {
     margin-right: 0; 
@@ -16,59 +16,64 @@
     margin-right: 10px;
   }
 
-  .row-one__left__info{
+  .row-one__left__info {
     margin-left: 10px;
   }
 
-  .row-two__left{
-    width: 268px;
+  .row-two__left {
+    margin-right: 0;
     margin-bottom: 20px;
   }
 
-  .row-three__left{
+  .row-three{
+    flex-direction: column;
+  }
+
+  .row-three__left {
     margin-bottom: 20px;
-  }
-
-  .row-two__right{
-    width: 268px;
-  }
-
-  .row-two__right__inner__block {
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 8px;
-    /* margin-bottom: 12px; */
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* width: 121px; */
-    margin-right: 16px;
   }
 
   .row-two__right__inner {
-    width: 242px;
+    width: 100%;
     display: flex;
-    /* flex: 1; */
     flex-direction: row;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .row-two__right__inner__block {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 16px;
+  }
+
+  .row-two__right__block {
+    justify-content: center;
+    margin-right: 12px;
+  }
+
+  .row-two__right__block:nth-child(1) {
+    flex: 1.5;
+  }
+
+  .row-two__right__block:nth-child(2) {
+    flex: 1;
+  }
+
+  .row-two__right__block:nth-child(3) {
+    flex: 1;
+  }
+
   .row-two__right__inner__block:last-child {
     margin-right: 0;
   }
 
-  .button_container {
-
-  }
-
-  #download-pdf {
-
-  }
-
+  .row-three__left {
+    margin-right: 0;
 }
 
 @media (max-width: 480px) {
@@ -77,42 +82,14 @@
   }
 
   #app {
-    padding-top: 0;
+    padding-top: 20px;
   }
 
   .button_container {
     width: 308px;
   }
-}
 
-[contenteditable="true"] {
 
-  transition: border 0.3s ease, background-color 0.3s ease;
-}
-
-[contenteditable="true"]:focus {
-  border: 2px dashed #3498db;
-  background-color: #eaf4fc;
-  outline: none; /* Убирает стандартное выделение */
-}
-
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-.ripple-container {
-  position: relative;
-  overflow: hidden;
+  
 }
 
