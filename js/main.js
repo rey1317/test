@@ -4,26 +4,35 @@ import "../css/style.css";
 import "../css/media.css";
 import "../css/animations.css";
 
+console.log("Script loaded");
+
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
   initializeRippleEffect();
   initializeContentEditable();
   initializeDownloadPDFButton();
 });
 
 function initializeRippleEffect() {
+  console.log("Initializing ripple effect");
   document.addEventListener("pointerdown", handlePointerDown);
 }
 
 function handlePointerDown(mouseEvent) {
+  console.log("Pointer down event", mouseEvent);
   const elementWithRipple = mouseEvent.target.closest(".ripple-effect");
   if (elementWithRipple) {
+    console.log("Ripple effect element found");
     createRipple(elementWithRipple, mouseEvent);
+  } else {
+    console.log("No ripple effect element found");
   }
 }
 
 function createRipple(elementWithRipple, mouseEvent) {
   const rippleEl = document.createElement("div");
   rippleEl.classList.add("ripple");
+  console.log("Creating ripple element", rippleEl);
 
   const { left, top } = elementWithRipple.getBoundingClientRect();
   const x = mouseEvent.clientX - left - 10;
@@ -36,19 +45,24 @@ function createRipple(elementWithRipple, mouseEvent) {
 function setPosition(rippleEl, x, y) {
   rippleEl.style.left = `${x}px`;
   rippleEl.style.top = `${y}px`;
+  console.log(`Setting ripple position: (${x}, ${y})`);
 }
 
 function appendRipple(elementWithRipple, rippleEl) {
   elementWithRipple.appendChild(rippleEl);
+  console.log("Appending ripple to element", elementWithRipple);
   requestAnimationFrame(() => {
     rippleEl.classList.add("run");
+    console.log("Adding run class to ripple", rippleEl);
   });
   rippleEl.addEventListener("transitionend", () => {
     rippleEl.remove();
+    console.log("Ripple transition ended and removed", rippleEl);
   });
 }
 
 function initializeContentEditable() {
+  console.log("Initializing content editable");
   document
     .querySelectorAll('[contenteditable="true"]')
     .forEach(setupContentEditable);
@@ -78,12 +92,15 @@ function handleContentEditableInput(element, key) {
 
 function markAsEdited(element) {
   element.classList.add("edited");
+  console.log("Element marked as edited", element);
   setTimeout(() => {
     element.classList.remove("edited");
+    console.log("Edited class removed from element", element);
   }, 150);
 }
 
 function initializeDownloadPDFButton() {
+  console.log("Initializing download PDF button");
   const downloadBtn = document.getElementById("download-pdf");
   if (downloadBtn) {
     downloadBtn.addEventListener("click", downloadPDF);
@@ -91,6 +108,7 @@ function initializeDownloadPDFButton() {
 }
 
 function downloadPDF() {
+  console.log("Downloading PDF");
   const element = document.getElementById("app");
   const opt = getPDFOptions();
   html2pdf().from(element).set(opt).save();
