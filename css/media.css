@@ -74,6 +74,7 @@
 
   .row-three__left {
     margin-right: 0;
+  }
 }
 
 @media (max-width: 480px) {
